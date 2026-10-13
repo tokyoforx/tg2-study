@@ -4,8 +4,14 @@ android.keystore
 keys/
 *.b64
 *.pass
-app/
+app/build/
 app-release-signed.apk
 app-release-unsigned.apk
 app-release-unsigned-aligned.apk
 app-release-bundle.aab
+pty-drive.py
+*.log
+.gradle/
+build/
+*.idsig
+local.properties

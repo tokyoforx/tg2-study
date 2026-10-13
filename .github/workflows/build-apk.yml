@@ -23,6 +23,20 @@ jobs:
       - name: Install Bubblewrap
         run: npm install -g @bubblewrap/cli
 
+      # Siapkan Android SDK + config bubblewrap supaya build non-interaktif
+      - name: Setup Android SDK
+        run: |
+          SDK=$HOME/android-sdk
+          curl -sL "https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip" -o /tmp/clt.zip
+          mkdir -p $SDK/cmdline-tools
+          unzip -q /tmp/clt.zip -d /tmp/clt
+          mv /tmp/clt/cmdline-tools $SDK/cmdline-tools/latest
+          yes | $SDK/cmdline-tools/latest/bin/sdkmanager --sdk_root=$SDK --licenses > /dev/null 2>&1 || true
+          $SDK/cmdline-tools/latest/bin/sdkmanager --sdk_root=$SDK "platform-tools" "build-tools;36.1.0" "platforms;android-36"
+          ln -sfn $SDK/cmdline-tools/latest/bin $SDK/bin
+          mkdir -p ~/.bubblewrap
+          printf '{"jdkPath":"%s","androidSdkPath":"%s"}' "$JAVA_HOME" "$SDK" > ~/.bubblewrap/config.json
+
       - name: Decode keystore
         run: echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > android.keystore
 
