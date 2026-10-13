@@ -1,0 +1,11 @@
+# Jangan commit keystore asli ke repo!
+android.keystore
+*.keystore
+keys/
+*.b64
+*.pass
+app/
+app-release-signed.apk
+app-release-unsigned.apk
+app-release-unsigned-aligned.apk
+app-release-bundle.aab
