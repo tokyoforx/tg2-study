@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TG2 Study — Offline</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: linear-gradient(160deg, #0E1526 0%, #1A2340 100%);
+    color: #EEF2FF; min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px; text-align: center;
+  }
+  .badge {
+    width: 88px; height: 88px; margin: 0 auto 20px;
+    background: rgba(244,63,94,.12); border: 2px solid #F43F5E; border-radius: 22px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 44px; font-weight: 800; color: #F43F5E;
+    font-family: serif;
+  }
+  h1 { font-size: 22px; margin-bottom: 8px; }
+  p { color: #9CA8C7; font-size: 14.5px; line-height: 1.65; max-width: 300px; margin: 0 auto; }
+  .cached {
+    margin-top: 18px; background: rgba(52,211,153,.08); border: 1px solid rgba(52,211,153,.3);
+    border-radius: 12px; padding: 12px 16px; font-size: 13px; color: #6EE7B7;
+    max-width: 320px; margin-left:auto; margin-right:auto;
+  }
+  button {
+    margin-top: 24px; background: #F43F5E; color: #fff; border: none;
+    border-radius: 999px; padding: 13px 34px; font-size: 15px; font-weight: 700;
+    cursor: pointer;
+  }
+  button:active { transform: scale(.97); }
+  .hint { margin-top: 14px; font-size: 12px; color: #6B7699; }
+</style>
+</head>
+<body>
+  <div>
+    <div class="badge">特</div>
+    <h1>Kamu sedang offline</h1>
+    <p>TG2 Study butuh internet untuk pertama kali membuka materi.</p>
+    <div class="cached">✓ Progres belajar kamu aman — tersimpan di perangkat, tidak hilang.</div>
+    <button onclick="location.reload()">Coba Lagi</button>
+    <div class="hint">Sambungkan ke WiFi atau kuota, lalu tekan Coba Lagi.</div>
+  </div>
+</body>
+</html>
